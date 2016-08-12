@@ -89,6 +89,8 @@ class Foaas extends GuzzleClient
      */
     public function __call($method, $args)
     {
+
+        $args = is_array($args[0]) ? $args[0]:$args;
         $missingArguments = [];
         $tooManyArguments = false;
         $operations = $this->getOperations();
